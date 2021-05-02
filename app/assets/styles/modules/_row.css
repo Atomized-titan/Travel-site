@@ -1,6 +1,9 @@
 .row{
 
-
+    &--t-padding{
+        padding-top: 80px;
+    }
+    
     @mixin clearFix{
     background-color: white;
     }
@@ -49,6 +52,16 @@
         }
        
         
+    }
+    /* Begin equal height rules */
+     &--equal-height-at-medium{
+        @mixin atMedium {
+            display: flex;
+        }
+        & > div{
+            float: none;
+            display: flex;
+        }
     }
     
 }
