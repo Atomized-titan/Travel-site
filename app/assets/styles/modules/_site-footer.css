@@ -3,6 +3,7 @@
     color: #fff;
     padding: 0.5rem 0;
     text-align: center;
+    
     &__text {
         display: block;
         margin-bottom: 1rem;

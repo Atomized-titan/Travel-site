@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "node-sass": "^5.0.0",
     "normalize.css": "^8.0.1"
   },
