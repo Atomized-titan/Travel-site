@@ -3,13 +3,20 @@
     width: 100%;
     z-index: 2;
     padding: 10px 0;
+    transition: background-color .3s ease-out;
+
+    &--is-expanded{
+        background-color: rgba($mainBlue,.55);
+    }
 
     @mixin atMedium {
         background-color: rgba($mainBlue, 0.3);
     }
 
     &__btn-container {
-        float: right;
+        @mixin atMedium {
+            float: right;
+        }
     }
     &__logo {
         position: absolute;
@@ -24,21 +31,81 @@
             padding: 25px 36px;
         }
     }
-    &__menu-icon{
-        width:20px;
-        height:20px;
-        background-color: #fff;
+    &__menu-icon {
+        width: 20px;
+        height: 19px;
         position: absolute;
         top: 10px;
         right: 10px;
+        z-index: 10;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            transform-origin: 0 0;
+            transition: transform 0.3s ease-out;
+        }
+        &__middle {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            transform-origin: 0 50%;
+            transition: all 0.3s ease-out;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            transform-origin: 0 100%;
+            transition: transform 0.3s ease-out;
+        }
         @mixin atMedium {
             display: none;
         }
     }
-    &__menu-content{
-        display: none;
+    &__menu-icon--close-x {
+        &::before {
+            transform: rotate(45deg) scaleX(1.25);
+        }
+        .site-header__menu-icon__middle {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        &::after {
+            transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+        }
+    }
+    &__menu-content {
+    
+        opacity: 0;
+        transition: all 0.3s ease-out;
+        transform: scale(1.2);
+        padding-top: 90px;
+        position: relative;
+        text-align: center;
+        z-index:-10 ;
         @mixin atMedium {
+            opacity: 1;
             display: block;
+            padding-top: 0;
+           
+        }
+        &--is-visible{
+            opacity: 1;
+            z-index: 1;
+            transform: scale(1);
         }
     }
 }
