@@ -30,6 +30,9 @@
             padding-right: 20px ;
         }
     }
+    .is-current-link{
+        color: #fabb69;;
+    }
     a {
         color: #fff;
         font-size: 1rem;
@@ -39,9 +42,13 @@
         padding: 5px 8px;
         background-color: rgba($mainOrange,0.8);
         @mixin atMedium {
+            
             font-size: 1rem;
             padding: 12px 0;
             background-color: transparent;
+            &.is-current-link{
+                color: #fabb69;
+            }
         }
     }
 }
