@@ -94,4 +94,6 @@ if (currentTask == 'build') {
   )
 }
 
+entry: path.resolve(__dirname, 'app') + '/assets/Scripts/App.js ',
+
 module.exports = config
