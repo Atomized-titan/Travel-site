@@ -13,7 +13,6 @@ new RevealOnscroll(document.querySelectorAll(".testimonial"), 60);
 let testimonialLink = document.querySelector("#testimonials-link")
 let modal
 
-
 testimonialLink.addEventListener('click', () => {
     testimonialLink.classList.add("is-current-link")
 })
